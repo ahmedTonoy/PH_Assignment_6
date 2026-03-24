@@ -25,13 +25,16 @@ const loadCategoryTrees = async (id) => {
 
 const renderCategories = (categories) => {
   const categoriesMenu = document.getElementById('categories-menu');
-  const fragment = document.createElement('div');
+  // const fragment = document.createElement('div');
   categories.forEach(category => {
-    const categoryDiv = document.createElement('div');
-    categoryDiv.innerHTML = `<li onclick="loadCategoryTrees(${category.id})" class="rounded-sm"><a class="category">${category.category_name}</a></li>`;
-    fragment.append(categoryDiv);
+    const categoryItem = document.createElement('li');
+    categoryItem.innerHTML = `<a class="category">${category.category_name}</a>`;
+    categoryItem.classList.add('rounded-sm', 'w-fit', 'lg:w-full');
+    categoryItem.addEventListener('click', loadCategoryTrees(category.id));
+    // fragment.append(categoryDiv);
+    categoriesMenu.append(categoryItem);
   });
-  categoriesMenu.append(fragment);
+  // categoriesMenu.append(fragment);
 }
 
 const loadCategories = async (url) => {

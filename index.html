@@ -7,10 +7,12 @@
     <!-- Daisy UI & Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts CDN-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900 display=swap" rel="stylesheet"/>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Style Links -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
@@ -63,16 +65,53 @@
       </div>
     </section>
     <section class="bg-[#f0fdf4] py-20">
-      <div class="container">
-        <h1 class="text-3xl font-extrabold mb-10 text-center">Choose Your Trees</h1>
+      <h1 class="text-3xl font-extrabold mb-10 text-center">Choose Your Trees</h1>
+      <div class="container flex flex-col lg:flex-row px-3 lg:px-0 gap-3 justify-between">
         <div>
           <h2 class="font-bold text-xl">Categories</h2>
-          <ul id="categories-menu" class="menu p-0 ml-0 mt-2 rounded-box w-46">
-            <li class="rounded-sm"><a class="category bg-[#15803d] text-white">All Trees</a></li>
+          <ul id="categories-menu" class="menu menu-horizontal justify-center lg:menu-vertical p-0 ml-0 mt-2 rounded-box w-full lg:w-40">
+            <li class="rounded-sm w-fit lg:w-full"><a class="category bg-[#15803d] text-white">All Trees</a></li>
           </ul>
         </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">
+          <div class="p-3 bg-white rounded-2xl max-w-3/4 mx-auto lg:max-w-65 h-fit">
+            <figure class="rounded-xl p-15 border"><img src="" alt=""></figure>
+            <h2 class="font-bold text-sm my-3">Mango Tree</h2>
+            <p class="text-xs text-justify">A sturdy tree with bark known for its heart-strengthening properties. Valued in herbal medicine for cardiovascular health.</p>
+            <div class="flex items-center justify-between font-bold text-lg my-3">
+              <p class="p-2 px-4 text-xs rounded-3xl text-[#15803d] bg-[#dcfce7]">Fruit Tree</p>
+              <p class="text-sm">৳500</p>
+            </div>
+            <button class="p-3 text-sm w-full bg-[#15803d] text-white font-semibold rounded-full">Add to Cart</button>
+          </div>
+          
+        </div>
+        <div class="p-3 bg-white rounded-2xl flex-1 h-fit">
+          <h2 class="font-bold text-xl mb-3">Your Cart</h2>
+          <div>
+            <div class="flex justify-between items-center mb-3 rounded-xl bg-[#f0fdf4] p-2.5">
+              <div>
+                <h3 class="font-bold text-sm">Mango Tree</h3>
+                <h2>৳500 x 1</h2>
+              </div>
+              <div><i class="fa-solid fa-circle-xmark hover:text-red-500"></i></div>
+            </div>
+            <div class="flex justify-between items-center mb-3 rounded-xl bg-[#f0fdf4] p-2.5">
+              <div>
+                <h3 class="font-bold text-sm">Guava Tree</h3>
+                <h2>৳500 x 1</h2>
+              </div>
+              <div><i class="fa-solid fa-circle-xmark hover:text-red-500"></i></div>
+            </div>
+          </div>
+          <hr>
+          <div class="flex justify-between mt-2 font-bold">
+            <h2>Total:</h2>
+            <h2>৳1000</h2>
+          </div>
+        </div>
       </div>
-      <div class="max-w-[830px] mx-auto">
+      <div class="max-w-[830px] mx-auto mt-20">
         <h1 class="text-3xl font-extrabold mb-10 text-center">About the Campaign</h1>
         <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
           <img class="w-1/2" src="assets/about.png" alt="">
