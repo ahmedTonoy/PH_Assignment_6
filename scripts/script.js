@@ -5,9 +5,24 @@ const loadURL = async (url, param) => {
   return data;
 };
 
+const loadSpinner = (status, spinner, content) => {
+  const loadingSpinner = document.getElementById(spinner);
+  const loadingContent = document.getElementById(content);
+  if(status) {
+    loadingSpinner.classList.remove('hidden');
+    loadingContent.classList.add('hidden');
+  } else {
+    loadingSpinner.classList.add('hidden');
+    loadingContent.classList.remove('hidden');
+  }
+};
+
 const activateCategory = () => {
-  document.getElementById('categories-menu').addEventListener('click', async (e) => {
+  document.getElementById('categories-menu').addEventListener('click', (e) => {
     const clicked = e.target.closest('.category');
+    if (!clicked) return;
+
+    e.preventDefault();
 
     const allCategories = document.querySelectorAll('.category');
     allCategories.forEach(category => {
@@ -16,7 +31,11 @@ const activateCategory = () => {
     clicked.classList.add('bg-[#15803d]', 'text-white');
 
     const id = clicked.dataset.id;
-    await loadCategoryTrees(id);
+    loadCategoryTrees(id);
+
+    document.getElementById('tree-section').scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 };
 
@@ -79,9 +98,11 @@ const renderPlants = (plants) => {
 };
 
 const loadCategoryTrees = async (id) => {
+  loadSpinner(true, 'tree-spinner', 'plants-container');
   const categoryURL = makeCategoryURL(id);
   const plants = await loadURL(categoryURL, 'plants');
   renderPlants(plants);
+  loadSpinner(false, 'tree-spinner', 'plants-container');
 };
 
 const renderCategories = (categories) => {
@@ -95,8 +116,10 @@ const renderCategories = (categories) => {
 };
 
 const loadCategories = async (url) => {
+  loadSpinner(true, 'category-spinner', 'categories-menu');
   const categories = await loadURL(url, 'categories');
   renderCategories(categories);
+  loadSpinner(false, 'category-spinner', 'categories-menu');
   activateCategory();
 };
 
