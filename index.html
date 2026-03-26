@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,19 +28,19 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow" >
-              <li><a>About</a></li>
-              <li><a>Gallery</a></li>
-              <li><a>Plant a Tree</a></li>
+            <ul tabindex="-1" class="menu menu-sm dropdown-content opacity-90 bg-white text-[#15803d] font-semibold rounded-box z-1 mt-3 w-28 p-2 shadow" >
+              <li><a href="#about">About</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#plant-a-tree">Plant a Tree</a></li>
             </ul>
           </div>
           <a class="btn btn-ghost pl-0 border-0 text-xl"><img class="hidden md:block w-8 h-8" src="assets/icon.png" alt="">Green Earth</a>
         </div>
         <div class="navbar-center hidden md:flex">
           <ul class="menu menu-horizontal px-1">
-            <li><a>About</a></li>
-            <li><a>Gallery</a></li>
-            <li><a>Plant a Tree</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#plant-a-tree">Plant a Tree</a></li>
           </ul>
         </div>
         <div class="navbar-end">
@@ -60,13 +60,13 @@
       <div class="hidden md:block max-w-[390px]">
         <img src="assets/hero-leaf2.png" alt="">
       </div>
-      <div class="flex md:hidden">
-        <img class="max-w-[200px]" src="assets/hero-leaf1.png" alt="">
-        <img class="max-w-[200px]" src="assets/hero-leaf2.png" alt="">
+      <div class="grid grid-cols-2 gap-2 md:hidden">
+        <img class="w-full" src="assets/hero-leaf1.png" alt="">
+        <img class="w-full" src="assets/hero-leaf2.png" alt="">
       </div>
     </section>
-    <section class="bg-[#f0fdf4] py-20">
-      <h1 id="tree-section" class="text-3xl font-extrabold mb-10 text-center">Choose Your Trees</h1>
+    <section id="gallery" class="bg-[#f0fdf4] py-20">
+      <h1 id="tree-tracker" class="text-3xl font-extrabold mb-10 text-center">Choose Your Trees</h1>
       <div class="container grid grid-cols-1 lg:grid-cols-12 gap-4 px-3 lg:px-0">
         <div class="lg:col-span-2 lg:sticky lg:top-0 lg:z-10 h-fit">
           <h2 class="font-bold text-xl text-center lg:text-left">Categories</h2>
@@ -95,7 +95,7 @@
           </div>
         </div>
       </div>
-      <div class="max-w-[830px] mx-auto mt-20">
+      <div id="about" class="max-w-[830px] mx-auto mt-20">
         <h1 class="text-3xl font-extrabold mb-10 text-center">About the Campaign</h1>
         <div class="flex flex-col md:flex-row items-center justify-between gap-4 px-3 lg:px-0">
           <img class="w-1/2" src="assets/about.png" alt="">
@@ -129,7 +129,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-[#166534] py-20">
+    <section id="plant-a-tree" class="bg-[#166534] py-20">
       <h1 class="text-3xl font-extrabold mb-8 text-center text-white">Plant a Tree Today</h1>
       <form class="flex flex-col justify-center gap-4 w-4/5 lg:w-1/3 p-5 bg-[#15803d] rounded-lg mx-auto" action="">
         <input type="text" placeholder="Your Name" class="input w-full" />

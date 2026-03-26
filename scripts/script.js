@@ -33,7 +33,7 @@ const activateCategory = () => {
     const id = clicked.dataset.id;
     loadCategoryTrees(id);
 
-    document.getElementById('tree-section').scrollIntoView({
+    document.getElementById('tree-tracker').scrollIntoView({
       behavior: 'smooth'
     });
   });
@@ -85,7 +85,7 @@ const renderPlants = (plants) => {
     plantDiv.classList.add('p-3', 'bg-white', 'rounded-2xl', 'flex', 'flex-col', 'lg:max-w-65', 'h-fit');
     plantDiv.innerHTML = `
       <figure><img class="rounded-xl w-full h-70 object-cover" src="${plant.image}" alt=""></figure>
-      <h2 onclick="loadTreeDetails(${plant.id})" class="font-bold cursor-pointer text-sm my-3">${plant.name}</h2>
+      <h2 class="font-bold text-sm my-3"><span class="cursor-pointer" onclick="loadTreeDetails(${plant.id})">${plant.name}</span></h2>
       <p class="text-xs text-justify line-clamp-3">${plant.description}</p>
       <div class="flex items-center justify-between font-bold text-lg my-3">
         <p class="p-2 px-4 text-xs rounded-3xl text-[#15803d] bg-[#dcfce7]">${plant.category}</p>
@@ -144,7 +144,7 @@ const showToast = (message) => {
   setTimeout(() => {
     toast.classList.add('opacity-0', 'translate-x-10');
     setTimeout(() => toast.remove(), 300);
-  }, 1500);
+  }, 2500);
 };
 
 const updateCartUI = () => {
