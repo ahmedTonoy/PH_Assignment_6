@@ -144,7 +144,7 @@ const showToast = (message) => {
   setTimeout(() => {
     toast.classList.add('opacity-0', 'translate-x-10');
     setTimeout(() => toast.remove(), 300);
-  }, 2500);
+  }, 2000);
 };
 
 const updateCartUI = () => {
@@ -207,3 +207,20 @@ const removeFromCart = () => {
 
 addToCart();
 removeFromCart();
+
+const scrollBtn = document.getElementById('scroll-top-btn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove('hidden');
+  } else {
+    scrollBtn.classList.add('hidden');
+  }
+});
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
